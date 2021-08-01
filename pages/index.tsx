@@ -16,8 +16,6 @@ export default function Home() {
 
   const [selected, setSelected] = React.useState<{ title: string, year: number } | null>(null);
 
-  const changedVal = (obj: { title: string, year: number } | null) => console.log(obj)
-
   return (
     <div className={styles.container}>
       <Head>
@@ -27,7 +25,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        {JSON.stringify(selected) || 123}
+        {selected && JSON.stringify(selected)}
         <Autocomplete
           getOptionSelected={(option, value) => option.title === value.title}
           onChange={(e, v) => setSelected(v)}
@@ -35,10 +33,7 @@ export default function Home() {
           options={top100Films}
           getOptionLabel={(option) => option.title}
           style={{ width: 500 }}
-          renderInput={(params) => {
-            return <TextField {...params} label="Find the company" variant="outlined" />
-          }
-          }
+          renderInput={(params) => <TextField {...params} label="Find the company" variant="outlined" />}
         />
 
 
