@@ -8,12 +8,25 @@ import React from 'react';
 export default function Home() {
 
   const top100Films = [
-    { title: 'Vietna Travel Group', year: 1994 },
-    { title: 'WorldLink', year: 1972 },
-    { title: 'NewLife BacNinh', year: 1974 },
+    { id: 1, title: 'Vietna Travel Group', year: 1972 },
+    { id: 2, title: 'WorldLink', year: 1972 },
+    { id: 3, title: 'NewLife BacNinh', year: 1974 },
   ];
 
-  const [selected, setSelected] = React.useState<{ title: string, year: number } | null>(null);
+  const [selected, setSelected] = React.useState<{ id:number, title: string, year: number } | null>(null);
+
+  const showCompany = () => {
+    switch(selected && selected.id) {
+      case 1:
+        return 'bar1';
+      case 2:
+        return 'bar2';
+      case 3:
+        return 'bar3';
+      default:
+        return 'foo';
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -34,6 +47,7 @@ export default function Home() {
           renderInput={(params) => <TextField {...params} label="Find the company" variant="outlined" />}
         />
 
+        {showCompany()}
 
       </main>
 
