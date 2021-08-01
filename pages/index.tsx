@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Box from '@material-ui/core/Box';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { TextField } from '@material-ui/core';
 import React from 'react';
@@ -25,7 +24,6 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        {selected && JSON.stringify(selected)}
         <Autocomplete
           getOptionSelected={(option, value) => option.title === value.title}
           onChange={(e, v) => setSelected(v)}
