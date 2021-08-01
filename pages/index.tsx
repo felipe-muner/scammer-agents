@@ -32,9 +32,9 @@ export default function Home() {
   const classes = useStyles();
 
   const top100Films = [
-    { id: 1, title: 'Vietna Travel Group', year: 1972 },
-    { id: 2, title: 'WorldLink', year: 1972 },
-    { id: 3, title: 'NewLife BacNinh', year: 1974 },
+    { id: 1, title: 'Company A', year: 1972 },
+    { id: 2, title: 'Company B', year: 1972 },
+    { id: 3, title: 'Company C', year: 1974 },
   ];
 
   const [selected, setSelected] = React.useState<{ id: number, title: string, year: number } | null>(null);
