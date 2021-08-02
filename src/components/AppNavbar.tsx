@@ -15,6 +15,8 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
+import ComboBox from './ComboBox';
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     grow: {
@@ -81,7 +83,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function PrimarySearchAppBar() {
+export default function PrimarySearchAppBar({ setSelected }: { setSelected: any }) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -190,6 +192,9 @@ export default function PrimarySearchAppBar() {
               }}
               inputProps={{ 'aria-label': 'search' }}
             />
+          </div>
+          <div>
+            <ComboBox setSelected={setSelected} />
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
