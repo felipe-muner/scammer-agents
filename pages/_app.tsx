@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
+import { CounterProvider } from '../src/context/Counter';
 
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -26,7 +27,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Component {...pageProps} />
+
+        <CounterProvider>
+          <Component {...pageProps} />
+        </CounterProvider>
       </ThemeProvider>
     </React.Fragment>
   );
