@@ -9,16 +9,16 @@ export default function Home() {
   const count = useCount()
   const dispatch = useDispatchCount()
 
-  const handleIncrease = (event) =>
+  const handleIncrease = (event: React.MouseEvent<HTMLElement>) =>
     dispatch({
       type: 'INCREASE',
     })
-  const handleDecrease = (event) =>
+  const handleDecrease = (event: React.MouseEvent<HTMLElement>) =>
     dispatch({
       type: 'DECREASE',
     })
 
-  const myNumber = (event) =>
+  const myNumber = (event: React.MouseEvent<HTMLElement>) =>
     dispatch({
       type: 'INCREASE_BY',
       payload: 20
